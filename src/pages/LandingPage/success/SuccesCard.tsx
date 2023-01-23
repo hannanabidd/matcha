@@ -1,21 +1,32 @@
 import Text from "@/components/ui/text/Text";
-import React from "react";
+import Image from "next/image";
+import React, { FC } from "react";
 
-const SuccessCard = () => {
+interface Card {
+  item: any;
+}
+
+const SuccessCard: FC<Card> = ({ item }) => {
   return (
     <>
-      <div className="bg-[url('/images/jack.svg')] h-[387px] w-[305px] p-[10px] flex items-end ">
-        <div className="box w-full ">
+      <div className={` p-[10px] flex items-end justify-center`}>
+        <img
+          src={item.image}
+          alt="image"
+          className=" h-[387px] w-[305px] "
+          style={{ height: "387px", width: "305px" }}
+        />
+        <div className="box w-full absolute z-20 w-[290px] mb-[10px] ">
           <Text
-            name="I was tired of searching WebMD and other sites. I wanted to find honest sources and thoughts as to what I was going through. "
+            name={item.para}
             customClass="text-[#fff] leading-[16px] text-[16px] font-khula"
           />
           <Text
-            name="Jack K."
+            name={item.heading}
             customClass="text-[#ffffff] leading-[22px] text-[20px] text-center mt-[5px]"
           />
           <Text
-            name="Brooklyn, NY"
+            name={item.country}
             customClass="text-[#fff] leading-[16px] text-[10px] text-center"
           />
         </div>

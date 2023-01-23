@@ -24,7 +24,7 @@
 }
 @layer components {
   .commonBtn {
-    @apply inline-flex items-center justify-center h-[36px] px-[20px] rounded-md font-semibold   hover:rounded-md active:rounded-sm active:bg-black focus:outline-0 focus:outline-offset-0 focus:outline-transparent focus:ring focus:ring-0 disabled:opacity-25 transition ease-in-out duration-150;
+    @apply inline-flex items-center justify-center h-[36px] px-[20px] rounded-md font-semibold no-underline hover:rounded-md active:rounded-sm active:bg-black focus:outline-0 focus:outline-offset-0 focus:outline-transparent focus:ring focus:ring-0 disabled:opacity-25 transition ease-in-out duration-150;
   }
   .primaryBtn {
     @apply bg-[var(--primaryColor)] text-[#fff] h-[50px] border-[var(--primaryColor)] border hover:text-[var(--primaryColor)] hover:bg-white;
