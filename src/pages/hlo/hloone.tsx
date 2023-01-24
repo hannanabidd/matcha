@@ -1,5 +1,9 @@
 import Button from "@/components/ui/button/Button";
+import DropdownMenu from "@/components/ui/dropdown/DropdownMenu";
+import Input from "@/components/ui/input/Input";
+import MultiSelectMenu from "@/components/ui/multiselect/MultiSelectMenu";
 import Option from "@/components/ui/Option/Option";
+import Rating from "@/components/ui/rating/Rating";
 import Text from "@/components/ui/text/Text";
 import React from "react";
 
@@ -23,7 +27,19 @@ const QuizOne = () => {
               />
               <Text name="Select one" customClass="" />
               <div className="my-[30px]">
-                <Option name="Adult" letter="A" />
+                <Option name="Adult " letter="A" />
+              </div>
+              <div className="my-[30px]">
+                <Rating />
+              </div>
+              <div className="my-[30px]">
+                <Input name="hello@gmail.com" />
+              </div>
+              <div className="my-[30px]">
+                <MultiSelectMenu />
+              </div>
+              <div className="my-[30px]">
+                <DropdownMenu />{" "}
               </div>
               <Button name="Next" type="primaryBtn" customClass="h-[36px] " />
             </div>

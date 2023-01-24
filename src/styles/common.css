@@ -46,6 +46,17 @@ ul {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
+::placeholder {
+  padding-left: 5px;
+  color: #c4c4c4;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  padding-left: 20px;
+  border: 1px solid #ccc;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 .contain {
   padding: 0px 120px;
 }
@@ -75,6 +86,7 @@ ul {
   border-radius: 16.5935px;
   padding: 10px;
 }
+
 @media (max-width: 600px) {
   img {
     margin-top: 10px;
@@ -82,4 +94,34 @@ ul {
   .column {
     flex-direction: column-reverse;
   }
+}
+
+.react-dropdown-select {
+  height: 49px;
+  border-radius: 10px 0px 10px 10px !important;
+  background: #e0dfdf;
+}
+.react-dropdown-select
+  .react-dropdown-select-content
+  .react-dropdown-select-input {
+  width: auto;
+}
+.react-dropdown-select .react-dropdown-select-option {
+  background-color: var(--primaryColor);
+}
+.react-dropdown-select .react-dropdown-select-dropdown {
+  background-color: #e0dfdf;
+}
+
+.react-dropdown-select
+  .react-dropdown-select-dropdown
+  .react-dropdown-select-item {
+  border-bottom: none !important;
+}
+.react-dropdown-select
+  .react-dropdown-select-dropdown
+  .react-dropdown-select-item-selected {
+  /* background-color: var(--primaryColor); */
+  background-color: var(--primaryColor);
+  border-bottom: none !important;
 }
