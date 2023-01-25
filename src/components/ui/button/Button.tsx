@@ -1,10 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { IButtonProps } from "./ButtonType.d";
 
-const Button: FC<IButtonProps> = ({ name, type, customClass }) => {
+const Button: FC<IButtonProps> = ({ name, type, customClass, call }) => {
   return (
     <>
-      <button className={`commonBtn btn-shadow  ${type} ${customClass}`}>
+      <button
+        className={`commonBtn btn-shadow  ${type} ${customClass}`}
+        onClick={call}>
         {name}
       </button>
     </>

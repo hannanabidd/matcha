@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import Select from "react-dropdown-select";
+import { iMultiProps } from "./MultiType.d";
 
 interface Option {
   label: string;
@@ -15,22 +16,24 @@ const options: Option[] = [
   { label: "Anxiety", value: "option6" },
 ];
 
-const MultiSelectMenu = () => {
+const MultiSelectMenu: FC<iMultiProps> = ({
+  name,
+  call,
+  customClass,
+  option,
+}) => {
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
 
-  // const handleChange = (values: ValueType<Option>) => {
-  //   setSelectedValues(values);
-  // }
+  const handleChange = (values: Option[]) => {
+    setSelectedValues(values);
+  };
 
   return (
     <Select
-      placeholder="Insurance Provider"
+      placeholder={name}
       style={{ background: "#e0dfdf", height: "49px" }}
-      //   className="w-[50%]"
-      options={options}
-      onChange={() => {
-        console.log("hlo");
-      }}
+      options={option}
+      onChange={handleChange}
       values={selectedValues}
       multi={true}
     />

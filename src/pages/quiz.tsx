@@ -1,7 +1,7 @@
 import QuizLayout from "@/components/base/Layout/QuizLayout";
 import Head from "next/head";
 import React from "react";
-import QuizOne from "./hlo/hloone";
+import QuizOne from "./QuizPage/QuizOne";
 
 const Quiz = () => {
   return (

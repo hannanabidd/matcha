@@ -1,4 +1,5 @@
 export interface iOptionProps {
   name: string;
-  letter: string;
+  letter?: string;
+  select?: any;
 }
