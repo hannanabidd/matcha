@@ -1,4 +1,5 @@
-import React, { FC, useState } from "react";
+import { QuizContext } from "@/context/quiz/QuizContext";
+import React, { FC, useContext, useState } from "react";
 import Select from "react-dropdown-select";
 import { iDropdownProps } from "./DropdownType.d";
 
@@ -24,10 +25,13 @@ const DropdownMenu: FC<iDropdownProps> = ({
   option,
 }) => {
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
+  const { data, setData } = useContext(QuizContext);
+  console.log("data in dropdown", data);
 
   const handleChange = (values: Option[]) => {
-    // console.log("value in dropdown", values);
+    // console.log("value in dropdown", values[0].value);
     setSelectedValues(values);
+    setData?.([...data, { answer: values[0].value }]);
   };
   return (
     <Select

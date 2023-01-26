@@ -1,7 +1,8 @@
-import QuizLayout from "@/components/base/Layout/QuizLayout";
+import QuizLayout from "@/components/base/Layout/QuizLayout/QuizLayout";
 import Head from "next/head";
 import React from "react";
-import QuizOne from "./QuizPage/QuizOne";
+import QuizOne from "../features/QuizPage/QuizOne";
+import QuizProvider from "../context/quiz/QuizContext";
 
 const Quiz = () => {
   return (
@@ -10,9 +11,11 @@ const Quiz = () => {
         <title>Quiz - Matcha</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <QuizLayout>
-        <QuizOne />
-      </QuizLayout>
+      <QuizProvider>
+        <QuizLayout>
+          <QuizOne />
+        </QuizLayout>
+      </QuizProvider>
     </>
   );
 };

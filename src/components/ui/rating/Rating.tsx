@@ -1,9 +1,11 @@
-import exp from "constants";
-import React, { useState } from "react";
+import { QuizContext } from "@/context/quiz/QuizContext";
+import React, { useContext, useState } from "react";
 import Text from "../text/Text";
 
 const Rating = () => {
   const [selected, setSelected] = useState<string>("");
+  const { data, setData } = useContext(QuizContext);
+  // console.log("data in d", data);
 
   return (
     <div className="flex">
@@ -19,6 +21,7 @@ const Rating = () => {
         }"`}
         onClick={() => {
           setSelected("1");
+          setData?.([...data, { answer: "1" }]);
         }}>
         <Text
           name="1"
@@ -33,6 +36,7 @@ const Rating = () => {
         }"`}
         onClick={() => {
           setSelected("2");
+          setData?.([...data, { answer: "2" }]);
         }}>
         <Text
           name="2"
@@ -47,6 +51,7 @@ const Rating = () => {
         }"`}
         onClick={() => {
           setSelected("3");
+          setData?.([...data, { answer: "3" }]);
         }}>
         <Text
           name="3"
@@ -61,6 +66,7 @@ const Rating = () => {
         }"`}
         onClick={() => {
           setSelected("4");
+          setData?.([...data, { answer: "4" }]);
         }}>
         <Text
           name="4"
@@ -75,6 +81,7 @@ const Rating = () => {
         }"`}
         onClick={() => {
           setSelected("5");
+          setData?.([...data, { answer: "5" }]);
         }}>
         <Text
           name="5"

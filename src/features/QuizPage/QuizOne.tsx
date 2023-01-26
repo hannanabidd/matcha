@@ -5,13 +5,21 @@ import MultiSelectMenu from "@/components/ui/multiselect/MultiSelectMenu";
 import Option from "@/components/ui/Option/Option";
 import Rating from "@/components/ui/rating/Rating";
 import Text from "@/components/ui/text/Text";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import questions from "../../data/quiz.json";
 import alphabets from "../../data/alphabets.json";
+import FormButtons from "@/components/ui/button/FormButtons";
+import Image from "next/image";
+import { QuizContext } from "@/context/quiz/QuizContext";
+import { useContext } from "react";
 
 const QuizOne = () => {
   const [step, setStep] = useState<number>(0);
+  const { data, setData } = useContext(QuizContext);
   // console.log("questions", questions);
+
+  const questionLength = questions.questions.length;
+  console.log("data in quiz", data);
 
   return (
     <>
@@ -44,15 +52,11 @@ const QuizOne = () => {
                         <div>
                           {data?.type == "option" ? (
                             <>
-                              {data?.options?.map((e: any, i: any) => {
-                                return (
-                                  <Option
-                                    name={e?.name}
-                                    letter={alphabets[i]}
-                                    select={e}
-                                  />
-                                );
-                              })}
+                              <Option
+                                option={data?.options}
+                                // selected={selected}
+                                // setSelected={setSelected}
+                              />
                             </>
                           ) : data?.type == "select" ? (
                             <div className="w-[50%]">
@@ -87,19 +91,31 @@ const QuizOne = () => {
                 </>
               );
             })}
+            {step == questionLength && (
+              <div className="w-[100%]">
+                <Text
+                  name="All done. Loading your perfect therapy sessions. "
+                  type="paragraph"
+                  customClass="text-[40px] font-400 leading-[50px] text-center"
+                />
+                <div className="w-[100%] flex justify-center mt-[100px]">
+                  <Image
+                    src="/images/loading.svg"
+                    alt="img"
+                    height={227}
+                    width={227}
+                  />
+                </div>
+              </div>
+            )}
           </div>
-          <div className="flex items-end">
-            <div
-              className="h-[28px] w-[34px] rounded-tl-[5px] rounded-bl-[5px] bg-[var(--primaryColor)] flex justify-center items-center cursor-pointer mr-[5px]"
-              onClick={() => setStep(step + 1)}>
-              <p className="text-[#fff] text-[30px] pt-[10px]">^</p>
-            </div>
-            <div
-              className="h-[28px] w-[34px] rounded-tr-[5px] rounded-br-[5px] bg-[var(--primaryColor)]  flex justify-center items-center cursor-pointer"
-              onClick={() => setStep(step - 1)}>
-              <p className="text-[#fff] text-[30px] pt-[10px] rotate-180">^</p>
-            </div>
-          </div>
+          {step == questionLength ? null : (
+            <>
+              <div className="flex items-end">
+                <FormButtons step={step} setStep={setStep} />
+              </div>
+            </>
+          )}
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
-import Layout from "@/components/base/Layout/Layout";
+import Layout from "@/components/base/Layout/MainLayout/Layout";
 import Head from "next/head";
 import React from "react";
-import LandingPage from "./LandingPage/LandingPage";
+import LandingPage from "../features/LandingPage/LandingPage";
 
 const Home = () => {
   return (
