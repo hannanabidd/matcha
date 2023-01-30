@@ -6,6 +6,7 @@ const Text: FC<iTextProps> = ({ name, type, customClass, span }) => {
     <>
       <h1 className={`text ${type} ${customClass}`}>
         {name}
+        <br />
         <span className="text-[#5C46E5]">{span}</span>
       </h1>
     </>

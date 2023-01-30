@@ -2,8 +2,11 @@ import Button from "@/components/ui/button/Button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  console.log("router", router.query.name);
   return (
     <div className="header">
       <div className="container flex justify-between items-center">

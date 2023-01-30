@@ -1,11 +1,11 @@
 import React, { FC, useContext, useState } from "react";
-import { iOptionProps } from "./OptionType.d";
 import alphabets from "../../../data/alphabets.json";
-import { QuizContext } from "@/context/quiz/QuizContext";
+import DropdownMenu from "../dropdown/DropdownMenu";
+import Text from "../text/Text";
+import { iOptionalProps } from "./OptionalType.d";
 
-const Option: FC<iOptionProps> = ({ option, handleData }) => {
+const Option: FC<iOptionalProps> = ({ option, handleData, question }) => {
   const [selected, setSelected] = useState<any>("");
-  const { data, setData } = useContext(QuizContext);
 
   return (
     <>
@@ -27,6 +27,23 @@ const Option: FC<iOptionProps> = ({ option, handleData }) => {
           </div>
         );
       })}
+      {selected == "Yes" && (
+        <>
+          <Text
+            name={question.Children?.question}
+            type="paragraph"
+            customClass="md:text-[40px] text-[24px] md:leading-[50px] leading-[35px] font-400 leading-[50px]"
+          />
+          <Text name={question?.Children?.select} customClass="" />
+          <div className="w-[50%]">
+            <DropdownMenu
+              option={question?.Children?.options}
+              name={"Insurance provide"}
+              handleData={handleData}
+            />
+          </div>
+        </>
+      )}
     </>
   );
 };

@@ -1,16 +1,19 @@
 import React, { FC, useState } from "react";
 import { IButtonProps } from "./FormButtonType";
 
-const FormButtons: FC<IButtonProps> = ({ step, setStep }) => {
+const FormButtons: FC<IButtonProps> = ({
+  step,
+  setStep,
+  handleNext,
+  question,
+  handlePrevious,
+}) => {
   const next = () => {
-    setStep?.((step as number) + 1);
+    // setStep?.((step as number) + 1);
+    handleNext(question);
   };
   const previous = () => {
-    if (step == 0) {
-      <></>;
-    } else {
-      setStep?.((step as number) - 1);
-    }
+    handlePrevious();
   };
 
   return (

@@ -16,16 +16,17 @@ const options: Option[] = [
   { label: "Anxiety", value: "option6" },
 ];
 
-const MultiSelectMenu: FC<iMultiProps> = ({
-  name,
-  call,
-  customClass,
-  option,
-}) => {
-  const [selectedValues, setSelectedValues] = useState<Option[]>([]);
+const MultiSelectMenu: FC<iMultiProps> = ({ name, option, handleData }) => {
+  const [selected, setSelected] = useState<Option[]>([]);
 
   const handleChange = (values: Option[]) => {
-    setSelectedValues(values);
+    console.log("values", values);
+    let output = [];
+    for (let i = 0; i < values.length; i++) {
+      output.push(values[i].value);
+    }
+    console.log("output", output);
+    handleData(output);
   };
 
   return (
@@ -34,7 +35,7 @@ const MultiSelectMenu: FC<iMultiProps> = ({
       style={{ background: "#e0dfdf", height: "49px" }}
       options={option}
       onChange={handleChange}
-      values={selectedValues}
+      values={selected}
       multi={true}
     />
   );

@@ -21,17 +21,16 @@ interface Option {
 const DropdownMenu: FC<iDropdownProps> = ({
   name,
   customClass,
-  call,
   option,
+  handleData,
 }) => {
   const [selectedValues, setSelectedValues] = useState<Option[]>([]);
-  const { data, setData } = useContext(QuizContext);
-  console.log("data in dropdown", data);
+
+  console.log("options", option);
 
   const handleChange = (values: Option[]) => {
-    // console.log("value in dropdown", values[0].value);
     setSelectedValues(values);
-    setData?.([...data, { answer: values[0].value }]);
+    handleData(values[0].value);
   };
   return (
     <Select

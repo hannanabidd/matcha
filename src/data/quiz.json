@@ -13,7 +13,8 @@
         { "id": "4", "name": "Couples" },
         { "id": "5", "name": "I don’t know" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How do you prefer your therapist identify as?",
@@ -26,7 +27,8 @@
         { "id": "2", "name": "Male" },
         { "id": "3", "name": "Non-binary" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "Which do you prefer your therapist identify as?",
@@ -42,7 +44,8 @@
         { "id": "5", "name": "Middle Eastern/North African" },
         { "id": "6", "name": "Indigenous" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "Do you have an age preference for your therapist?",
@@ -59,7 +62,8 @@
         { "id": "6", "name": "51-60" },
         { "id": "7", "name": "61+" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How important is your therapist’s gender, sexual,ethnic, religious or political identity?",
@@ -70,7 +74,8 @@
         { "id": "0", "name": "Important" },
         { "id": "1", "name": "Not Important" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "Would you like to use insurance for therapy?",
@@ -82,6 +87,7 @@
         { "id": "1", "name": "No" }
       ],
       "required": true,
+      "error": "Please select option",
       "child": true,
       "Children": {
         "id": "0",
@@ -89,11 +95,23 @@
         "type": "select",
         "select": "Select one",
         "options": [
-          { "id": "0", "name": "Aetna" },
-          { "id": "1", "name": "Affinity Health Plan" },
-          { "id": "2", "name": "Anthem BIBS" },
-          { "id": "3", "name": "Blue Cross Blue Shield" },
-          { "id": "4", "name": "Ethnic Health Care" }
+          { "id": "0", "name": "Aetna", "value": "Aetna" },
+          {
+            "id": "1",
+            "name": "Affinity Health Plan",
+            "value": "Affinity Health Plan"
+          },
+          { "id": "2", "name": "Anthem BIBS", "value": "Anthem BIBS" },
+          {
+            "id": "3",
+            "name": "Blue Cross Blue Shield",
+            "value": "Blue Cross Blue Shield"
+          },
+          {
+            "id": "4",
+            "name": "Ethnic Health Care",
+            "value": "Ethnic Health Care"
+          }
         ],
         "required": "true"
       }
@@ -109,7 +127,8 @@
         { "id": "2", "name": "$60 - $90" },
         { "id": "3", "name": "$35 - $59" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "What state are you in?",
@@ -125,7 +144,8 @@
         { "id": "4", "label": "Ohio", "value": "Ohio" },
         { "id": "5", "label": "Hawaii", "value": "Hawaii" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option from the drop down"
     },
     {
       "question": "What's your email?",
@@ -133,7 +153,8 @@
       "select": "Select one",
       "type": "input",
       "placeholder": "hello@gmail.com",
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "We found some matches. Do you want to see them or move on to our personality questions  for more accurate results?",
@@ -144,7 +165,8 @@
         { "id": "0", "name": "Let’s see some therapists! " },
         { "id": "1", "name": "Let’s get to know each other better" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "My Future...?",
@@ -157,7 +179,8 @@
         { "id": "2", "name": "Looking like it can get bad" },
         { "id": "3", "name": "Really Sucks" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "Are you the nervous type?",
@@ -170,7 +193,8 @@
         { "id": "2", "name": "Yes, but I don’t have panic attacks" },
         { "id": "3", "name": "Yes, but I have panic attacks" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How tired are you?",
@@ -183,7 +207,8 @@
         { "id": "2", "name": "Most days I wish I could be in bed" },
         { "id": "3", "name": "I often feel tense and tired" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "If you had to solve a puzzle during an  interview to get your dream job..",
@@ -196,7 +221,8 @@
         { "id": "2", "name": "I’d be annoyed and/or exhausted" },
         { "id": "3", "name": "I’d be confused. I’d probably give up" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How often do you feel lonely?",
@@ -209,7 +235,8 @@
         { "id": "2", "name": "Sometimes" },
         { "id": "3", "name": "All the times" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How long before you download  the next trending app?",
@@ -222,7 +249,8 @@
         { "id": "2", "name": "When it feels like the world has" },
         { "id": "3", "name": "I don’t care about new apps" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "How do you feel about someone who has sex on the first date with someone they met online?",
@@ -241,7 +269,8 @@
           "name": "I think they should be in a committed  relationship beforehand"
         }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "If you were stuck in an elevator, who would you rather speak with?",
@@ -256,7 +285,8 @@
         { "id": "4", "name": "Athlete" },
         { "id": "5", "name": "Investor" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "What excites you the most?",
@@ -271,7 +301,8 @@
         { "id": "4", "name": "Romance, sex, sensual pleasures" },
         { "id": "5", "name": "Living a healthy lifestyle" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "What communication style do you like the most?",
@@ -284,58 +315,65 @@
         { "id": "2", "name": "Cheerful and engaging" },
         { "id": "3", "name": "Opinionated and challenging" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select option"
     },
     {
       "question": "I’m kind to people even if they’ve betrayed me...",
       "id": 20,
       "select": "Select one",
       "type": "mcq",
-      "required": true
+      "required": true,
+      "error": "Please rate your opinion"
     },
     {
       "question": "I really like being prepared for every single activity in my life",
       "id": 21,
       "select": "Select one",
       "type": "mcq",
-      "required": true
+      "required": true,
+      "error": "Please rate your opinion"
     },
     {
       "question": "Meeting new people at parties excites me...",
       "id": 22,
       "select": "Select one",
       "type": "mcq",
-      "required": true
+      "required": true,
+      "error": "PPlease rate your opinion"
     },
     {
       "question": "I’m always curious to learn about other people’s opinions, even if they upset me...",
       "id": 23,
       "select": "Select one",
       "type": "mcq",
-      "required": true
+      "required": true,
+      "error": "Please rate your opinion"
     },
     {
       "question": "I can stay composed even when being verbally criticized...",
       "id": 24,
       "select": "Select one",
       "type": "mcq",
-      "required": true
+      "required": true,
+      "error": "Please rate your opinion"
     },
     {
       "question": "What issues are you facing?",
       "id": 25,
-      "select": "Select one",
+      "select": "Select multiple",
       "type": "multi",
-      "placeholder": "Select State",
+      "placeholder": "Select multiple issues facing",
       "options": [
-        { "id": "0", "label": "Florida", "value": "Florida" },
-        { "id": "1", "label": "California", "value": "California" },
-        { "id": "2", "label": "Alaska", "value": "Alaska" },
-        { "id": "3", "label": "Texas", "value": "Texas" },
-        { "id": "4", "label": "Ohio", "value": "Ohio" },
-        { "id": "5", "label": "Hawaii", "value": "Hawaii" }
+        { "id": "0", "label": "ADHD", "value": "ADHD" },
+        { "id": "1", "label": "Addiction", "value": "Addiction" },
+        { "id": "2", "label": "Adoption", "value": "Adoption" },
+        { "id": "3", "label": "Alcohol Use", "value": "Alcohol Use" },
+        { "id": "4", "label": "Anxiety", "value": "Anxiety" },
+        { "id": "5", "label": "Depression", "value": "Depression" }
       ],
-      "required": true
+      "required": true,
+      "error": "Please select options from the drop down"
     }
   ]
 }

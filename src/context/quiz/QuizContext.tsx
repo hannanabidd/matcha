@@ -1,6 +1,6 @@
 import { createContext, Dispatch, FC, SetStateAction, useState } from "react";
 interface IDataProps {
-  id?: string;
+  id?: number;
   answer: string;
 }
 
